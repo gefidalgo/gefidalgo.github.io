@@ -150,8 +150,8 @@ while (Premios_Restantes.length > 1) { //Mientras queden mas de un maletin por a
       alert("Gracias por jugar, " + NombreParticipante + "!");
       break; //Termina el juego
     } else { //Si el usuario no acepta la oferta
-      console.log("El Jugador Decidio Rechazar la oferta de la banca de $" + OfertaBanca); //Muestra al debugger la decision del jugador
-      alert("Has rechazado la oferta. El juego continua.");
+        console.log("El Jugador Decidio Rechazar la oferta de la banca de $" + OfertaBanca); //Muestra al debugger la decision del jugador
+        alert("Has rechazado la oferta. El juego continua.");
     }
 }
 

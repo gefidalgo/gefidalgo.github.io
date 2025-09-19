@@ -78,6 +78,7 @@ let Premios_Restantes = Maletines.slice(); //Crea una copia del array completo i
 Premios_Restantes.splice(MaletinDelParticipante - 1, 1); //Remueve el maletin elegido por el participante del array de premios restantes posicion -1 por el tema del indice que empieza en 0
 
 let Premios_Restantes_Visible = Maletines.slice(); //Crea una copia del array completo inicial de Maletines para ir llevando un control visible al participante, no mostrar al usuario
+shuffle(Premios_Restantes_Visible); //Mezcla el array para que el usuario no pueda deducir la posicion del premio en base al maletin elegido
 
 let Maletines_Sin_abrir_Numero = Maletines_Numero.slice(); //Crea una copia del array completo inicial de Maletines con su numero
 Maletines_Sin_abrir_Numero.splice(MaletinDelParticipante - 1, 1); //Remueve el maletin elegido por el participante del array de premios restantes posicion -1 por el tema del indice que empieza en 0
@@ -118,9 +119,11 @@ while (Premios_Restantes.length > 1) { //Mientras queden mas de un maletin por a
 
     console.log("Maletines aun sin descubrir Visibles al jugador:");
     Premios_Restantes_Visible.splice(Premios_Restantes_Visible.indexOf(Maletines[MaletinAbierto - 1]), 1); //Remueve el maletin abierto del array de premios restantes visibles
+    shuffle(Premios_Restantes_Visible); //Mezcla el array para que el usuario no pueda deducir la posicion del premio en base al maletin elegido
     console.log(Premios_Restantes_Visible); //Muestra al debugger los premios restantes en consola visibles al jugador
-    Maletines_Sin_abrir_Numero.splice(Maletines_Sin_abrir_Numero.indexOf(MaletinAbierto), 1); //Remueve el maletin abierto del array de numeros de maletines que el usuario aun puede seleccionar
+
     console.log("Maletines que el usuario aun puede seleccionar:");
+    Maletines_Sin_abrir_Numero.splice(Maletines_Sin_abrir_Numero.indexOf(MaletinAbierto), 1); //Remueve el maletin abierto del array de numeros de maletines que el usuario aun puede seleccionar
     console.log(Maletines_Sin_abrir_Numero); //Muestra al debugger los numeros de maletines que el usuario aun puede seleccionar
 
     alert("Premios aun sin descubrir: " + Premios_Restantes_Visible); //Muestra al usuario los premios restantes en un alert

@@ -157,7 +157,7 @@ while (Premios_Restantes.length > 1) { //Mientras queden mas de un maletin por a
 console.log("Etapa Final - Queda un solo maletin por abrir o el jugador acepto la oferta de la banca");
 
 if (Premios_Restantes.length === 1) { //Si queda un solo maletin por abrir
-  console.log("Solo queda un maletin por abrir. Tu maletin contiene un premio de $" + Maletines[MaletinDelParticipante - 1] + ".");
-  console.log("El maletin restante contiene un premio de $" + Premios_Restantes[0] + ".");
-  console.log("Gracias por jugar, " + NombreParticipante + "!");
+  alert("Solo queda un maletin por abrir. Tu maletin contiene un premio de $" + Maletines[MaletinDelParticipante - 1] + ".");
+  alert("El maletin restante contiene un premio de $" + Premios_Restantes[0] + ".");
+  alert("Gracias por jugar, " + NombreParticipante + "!");
 }

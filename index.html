@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicias del Alma - Tortas Personalizadas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de progreso -->
+        <div class="barra-progreso">
+            <div class="progreso"></div>
+        </div>
+
+        <!-- Pantalla 1: Inicio -->
+        <div class="pantalla pantalla-1">
+            <img src="media/logo.png" alt="Logo Delicias del Alma" style="max-width: 180px; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;">
+            <h1>Bienvenido a Delicias del Alma</h1>
+            <p>¡Crea tu torta de cumpleaños perfecta en simples pasos!</p>
+            <div class="botones">
+                <button class="btn btn-primary btn-siguiente">Comenzar pedido</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 2: Selección de torta -->
+        <div class="pantalla pantalla-2">
+            <h2>Personaliza tus Tortas</h2>
+            <div id="tortasContainer">
+                <!-- Aquí se mostrarán las tortas agregadas -->
+            </div>
+
+            <form id="formTorta">
+                <div class="form-group">
+                    <label for="tipo">Tipo de Torta</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecciona un tipo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tamaño">Tamaño</label>
+                    <select id="tamaño" name="tamaño" required>
+                        <option value="">Selecciona un tamaño</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Opcionales</label>
+                    <div class="opcionales" id="opcionalesContainer">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="subtotal">
+                    <p>Subtotal de esta torta: $<span id="subtotalTorta">0</span></p>
+                </div>
+
+                <div class="botones">
+                    <button type="button" class="btn btn-secondary btn-anterior">Anterior</button>
+                    <button type="submit" class="btn btn-primary">Agregar Torta</button>
+                </div>
+            </form>
+
+            <div class="resumen-tortas">
+                <h3>Total del Pedido: $<span id="totalPedido">0</span></h3>
+                <button id="btnContinuar" class="btn btn-primary btn-siguiente" style="display: none;">
+                    Continuar al siguiente paso
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla 3: Selección de fecha -->
+        <div class="pantalla pantalla-3">
+            <h2>Selecciona la Fecha de Entrega</h2>
+            <p style="color:#b85c00; margin-bottom: 16px; font-weight: bold;">Solo se toman pedidos para los próximos 30 días.</p>
+            <form id="formFecha">
+                <div class="form-group">
+                    <label for="fecha">Fecha de entrega</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="botones">
+                    <button type="button" class="btn btn-secondary btn-anterior">Anterior</button>
+                    <button type="submit" class="btn btn-primary btn-siguiente">Siguiente</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Pantalla 4: Resumen -->
+        <div class="pantalla pantalla-4">
+            <h2>Resumen del Pedido</h2>
+            <div id="resumen" class="resumen">
+                <!-- Se llenará dinámicamente -->
+            </div>
+
+            <div class="botones">
+                <button type="button" class="btn btn-secondary btn-anterior">Anterior</button>
+                <button type="button" class="btn btn-warning" id="btnModificarPedido">Modificar Pedido</button>
+                <button type="button" class="btn btn-primary" id="btnContinuarDatos">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 5: Datos personales -->
+        <div class="pantalla pantalla-5">
+            <h2>Datos de contacto</h2>
+            <form id="formDatosPersonales">
+                <div class="form-group">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required pattern="[0-9\-\+\s]+">
+                </div>
+                <div class="botones">
+                    <button type="button" class="btn btn-secondary btn-anterior">Anterior</button>
+                    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Pantalla 6: Confirmación -->
+        <div class="pantalla pantalla-6">
+            <div class="confirmacion">
+                <i class="fas fa-check-circle"></i>
+                <h2>¡Pedido Confirmado!</h2>
+                <p><strong id="nombreConfirmacion"></strong>, tu pedido ha sido registrado exitosamente.</p>
+                <p>Te contactaremos para coordinar el pago y la entrega.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/db.js"></script>
+    <script src="js/codigoJs.js"></script>
+</body>
+</html>
